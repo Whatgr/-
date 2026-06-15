@@ -7,6 +7,11 @@ Version: 1.0
 
 /* ===== CSS VARIABLES ===== */
 :root {
+
+    /*Шрифты*/
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
     /* Основные цвета */
     --color-primary: #F02121;
     --color-primary-dark: #d63027;
@@ -83,9 +88,15 @@ Version: 1.0
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
+    font-weight: 400;
     line-height: 1.6;
     color: var(--color-text);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
 }
 
 .container {
@@ -122,19 +133,24 @@ body {
 }
 
 .hero h1 {
-    font-size: var(--text-7xl);
+    font-family: var(--font-heading);
+    font-size: 48px;
     font-weight: 700;
+    line-height: 56px;
+    letter-spacing: -0.96px;
     margin-bottom: var(--spacing-xl);
     max-width: 700px;
-    line-height: 1.1;
     text-align: left;
 }
 
 .hero p {
-    font-size: var(--text-lg);
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
     max-width: 600px;
     margin-bottom: var(--spacing-2xl);
-    line-height: 1.5;
     text-align: left;
 }
 
@@ -145,13 +161,17 @@ body {
 }
 
 .btn {
+    font-family: var(--font-heading);
     background: var(--color-primary);
     color: var(--color-white);
     padding: 14px 32px;
     border: none;
     border-radius: var(--radius-sm);
-    font-size: var(--text-xl);
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
     cursor: pointer;
     transition: background var(--transition-base);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -162,13 +182,17 @@ body {
 }
 
 .btn-outline {
+    font-family: var(--font-heading);
     background: rgba(255, 255, 255, 0.2);
     color: var(--color-white);
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 14px 32px;
     border-radius: var(--radius-sm);
-    font-size: var(--text-xl);
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
     cursor: pointer;
     backdrop-filter: blur(5px);
     transition: background var(--transition-base);
@@ -219,9 +243,13 @@ body {
 }
 
 .stat-item p {
-    font-size: var(--text-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    text-align: center;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -646,13 +674,14 @@ body {
 }
 
 .btn-buy {
+    font-family: var(--font-heading);
+    font-weight: 400;
     background: var(--color-primary);
     color: var(--color-white);
     border: none;
     padding: 10px 24px;
     border-radius: var(--radius-sm);
     font-size: var(--text-base);
-    font-weight: 600;
     cursor: pointer;
     transition: background var(--transition-base);
 }
@@ -716,37 +745,38 @@ body {
     margin: 0;
 }
 
+
 .why-us-images {
     position: relative;
+    width: 100%;
 }
 
 .image-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    max-width: 585px; 
+    height: 320px; 
     position: relative;
-    height: 400px;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
 }
 
 .stack-image {
-    position: absolute;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    object-fit: cover;
+    width: 100%;
 }
 
 .stack-image-1 {
-    width: 60%;
-    height: 70%;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    height: 75%; 
+    align-self: center; 
 }
 
 .stack-image-2 {
-    width: 55%;
-    height: 65%;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
+    height: 100%; 
 }
+
 
 .verified-badge {
     position: absolute;
@@ -759,8 +789,9 @@ body {
     box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     z-index: 3;
+    white-space: nowrap;
 }
 
 .verified-icon {
@@ -899,13 +930,14 @@ body {
 }
 
 .btn-submit {
+    font-family: var(--font-heading);
+    font-weight: 400;
     background: var(--color-accent);
     color: var(--color-white);
     border: none;
     padding: 18px 32px;
     border-radius: var(--radius-md);
     font-size: var(--text-xl);
-    font-weight: 600;
     cursor: pointer;
     transition: background var(--transition-base), transform var(--transition-fast);
     box-shadow: 0 4px 12px rgba(251, 142, 38, 0.3);
@@ -932,22 +964,21 @@ body {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1280px) {
+@media (min-width: 968px) and (max-width: 1280px) {
     .container {
         max-width: 100%;
         padding: 0 40px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .container {
         padding: 0 20px;
     }
     
     .hero .container {
-        padding: 60px 0;
+        padding: 60px 20px; 
     }
-    
     .hero h1 {
         font-size: var(--text-4xl);
     }
@@ -1016,27 +1047,13 @@ body {
     }
     
     .why-us-content .section-title {
-        text-align: center;
+        text-align: left; 
     }
-    
-    .feature-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
+
     .image-stack {
-        height: 300px;
-    }
-    
-    .stack-image-1 {
-        width: 70%;
-        height: 60%;
-    }
-    
-    .stack-image-2 {
-        width: 65%;
-        height: 55%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 585 / 320; 
     }
     
     .cta-card {
@@ -1047,11 +1064,11 @@ body {
     
     .cta-content h2 {
         font-size: var(--text-3xl);
-        text-align: center;
+        text-align: left; 
     }
     
     .cta-content > p {
-        text-align: center;
+        text-align: left; 
     }
     
     .cta-features {
@@ -1137,6 +1154,15 @@ body {
         flex-direction: column;
         gap: var(--spacing-xs);
     }
+
+    .image-stack {
+        height: auto;
+        aspect-ratio: 585 / 320;
+    }
+    
+    .verified-badge {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
     
     .feature-icon {
         width: 48px;
@@ -1153,14 +1179,6 @@ body {
     
     .feature-text p {
         font-size: var(--text-sm);
-    }
-    
-    .image-stack {
-        height: 250px;
-    }
-    
-    .verified-badge {
-        padding: var(--spacing-sm) var(--spacing-md);
     }
     
     .cta-card {
